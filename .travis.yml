@@ -1,0 +1,20 @@
+sudo: required
+#env:
+#  - GITEE_PW=
+#  - GITEE_ACC=
+#  - ALI_DOCKER_USERNAME=
+#  - ALI_DOCKER_PASSWORD=
+#  - GITHUB_USERNAME=
+#  - GITHUB_PASSWORD=
+
+before_deploy:
+      # Set up git user name and tag this commit
+      - git config --global user.name "xiaoluhong"
+      - git config --global user.email "xiaoluhong@rancher.com"
+      - git config --global push.default simple
+
+deploy:
+  - provider: script
+    script: bash scripts/sync-gitee.sh
+  - provider: script
+    script: bash scripts/sync-k8s-docs.sh
