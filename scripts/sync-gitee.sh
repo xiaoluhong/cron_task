@@ -12,6 +12,7 @@ sync_repo ()
         git clone https://${github_repo_url}/${repo}.git
         cd ${repo}
         git push -f https://${GITEE_ACC}:${GITEE_PW}@${gitee_repo_url}/${repo}.git
+        cd && rm -rf ${repo}
 
     done
 

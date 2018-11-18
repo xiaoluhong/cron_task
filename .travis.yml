@@ -1,5 +1,13 @@
 language: generic
 
+env:
+  export GITEE_ACC=[secure]
+$ export GITEE_PW=[secure]
+$ export ALI_DOCKER_USERNAME=[secure]
+$ export ALI_ DOCKER_PASSWORD=[secure]
+$ export GITHUB_USERNAME=[secure]
+$ export GITHUB_PASSWORD=[secure]
+
 before_deploy:
       # Set up git user name and tag this commit
       - git config --global user.name "xiaoluhong"
@@ -8,4 +16,5 @@ before_deploy:
 
 deploy:
   provider: script
+  skip_cleanup: true
   script: bash scripts/sync-gitee.sh
