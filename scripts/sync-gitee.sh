@@ -6,7 +6,7 @@ export gitee_repo_url=gitee.com/rancher
 
 sync_repo ()
 {
-    for repo in $(repo_list);
+    for repo in ${repo_list};
     do
         git clone https://${github_repo_url}/${repo}.git
         cd ${repo}
