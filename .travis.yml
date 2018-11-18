@@ -1,8 +1,5 @@
 language: generic
 
-services:
-  - docker
-
 before_deploy:
       # Set up git user name and tag this commit
       - git config --global user.name "xiaoluhong"
@@ -10,7 +7,5 @@ before_deploy:
       - git config --global push.default simple
 
 deploy:
-  - provider: script
-    script: bash scripts/sync-gitee.sh
-  - provider: script
-    script: bash scripts/sync-k8s-docs.sh
+  provider: script
+  script: bash scripts/sync-gitee.sh
