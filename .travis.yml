@@ -1,11 +1,5 @@
-sudo: required
-#env:
-#  - GITEE_PW=
-#  - GITEE_ACC=
-#  - ALI_DOCKER_USERNAME=
-#  - ALI_DOCKER_PASSWORD=
-#  - GITHUB_USERNAME=
-#  - GITHUB_PASSWORD=
+services:
+  - docker
 
 before_deploy:
       # Set up git user name and tag this commit
