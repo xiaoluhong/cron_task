@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-export repo_list="rancher rke ui docs os charts rancher-catalog community-catalog server-chart install-docker"
+export repo_list="rancher rke ui docs os charts rancher-catalog community-catalog server-chart install-docker rio rke-tools longhorn"
 export github_repo_url=github.com/rancher
 export gitee_repo_url=gitee.com/rancher
 
