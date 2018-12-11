@@ -1,6 +1,5 @@
 #!/bin/bash
 
-docker login -u${ALI_DOCKER_USERNAME} -p${ALI_ DOCKER_PASSWORD}
 
 workdir=`pwd`
 log_file=${workdir}/sync_images_$(date +"%Y-%m-%d").log
