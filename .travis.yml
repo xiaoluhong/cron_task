@@ -17,5 +17,5 @@ before_install:
   - sudo pip install shyaml
   - sudo apt-get install jq
   - chmod +x scripts/sync-img.sh
-  - sudo docker login --username=${ALI_DOCKER_USERNAME}  registry.cn-shenzhen.aliyuncs.com -p${ALI_ DOCKER_PASSWORD}
+  - sudo docker login --username=${ALI_DOCKER_USERNAME}  -p${ALI_DOCKER_PASSWORD} registry.cn-shenzhen.aliyuncs.com
   - scripts/sync-img.sh
