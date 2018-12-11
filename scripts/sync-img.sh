@@ -1,12 +1,14 @@
 #!/bin/bash
 
-docker login --username=${ALI_DOCKER_USERNAME}  -p${ALI_DOCKER_PASSWORD} registry.cn-shenzhen.aliyuncs.com
 
 workdir=`pwd`
 log_file=${workdir}/sync_images_$(date +"%Y-%m-%d").log
 images_list="kubernetes-dashboard,k8s-dns-sidecar,k8s-dns-kube-dns,k8s-dns-dnsmasq-nanny,heapster-grafana,heapster-influxdb,heapster,pause,tiller"
 images_arch=amd64
-images_namespace=cnrancher
+images_namespace=hongxiaolu
+
+#docker login --username=${ALI_DOCKER_USERNAME}  -p${ALI_DOCKER_PASSWORD}
+docker login -u ${} -p ${DOCKER_PASSWORD}
 
 #Input params: messages
 #Output params: None
@@ -76,8 +78,8 @@ docker_push ()
     rancher_namespace=$3
 
     docker pull gcr.io/${gcr_namespace}/${img_tag}
-    docker tag gcr.io/${gcr_namespace}/${img_tag} registry.cn-shenzhen.aliyuncs.com/${rancher_namespace}/${img_tag}
-    docker push registry.cn-shenzhen.aliyuncs.com/${rancher_namespace}/${img_tag}
+    docker tag gcr.io/${gcr_namespace}/${img_tag} ${rancher_namespace}/${img_tag}
+    docker push ${rancher_namespace}/${img_tag}
 
     if [ $? -ne 0 ]; then
         logger "synchronized the ${rancher_namespace}/${img_tag} failed."
