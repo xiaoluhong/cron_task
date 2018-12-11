@@ -8,7 +8,7 @@ images_arch=amd64
 images_namespace=hongxiaolu
 
 #docker login --username=${ALI_DOCKER_USERNAME}  -p${ALI_DOCKER_PASSWORD}
-docker login -u ${} -p ${DOCKER_PASSWORD}
+docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
 
 #Input params: messages
 #Output params: None
