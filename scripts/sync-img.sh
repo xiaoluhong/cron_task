@@ -4,7 +4,7 @@ sudo docker login --username=${ALI_DOCKER_USERNAME}  -p${ALI_DOCKER_PASSWORD} re
 
 workdir=`pwd`
 log_file=${workdir}/sync_images_$(date +"%Y-%m-%d").log
-images_list="kubernetes-dashboard,k8s-dns-sidecar,k8s-dns-kube-dns,k8s-dns-dnsmasq-nanny,heapster-grafana,heapster-influxdb,heapster,pause,tiller"
+images_list="tiller"
 images_arch=amd64
 images_namespace=cnrancher
 
