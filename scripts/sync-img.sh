@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sudo docker login --username=${ALI_DOCKER_USERNAME}  -p${ALI_DOCKER_PASSWORD} registry.cn-shenzhen.aliyuncs.com
 
 workdir=`pwd`
 log_file=${workdir}/sync_images_$(date +"%Y-%m-%d").log
