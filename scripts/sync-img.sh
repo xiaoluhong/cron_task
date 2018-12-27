@@ -154,3 +154,8 @@ sync_images_with_arch ()
 #docker_install_check
 #docker_login_check
 sync_images_with_arch ${images_list} ${images_arch} ${images_namespace}
+
+docker login --username=${ALI_DOCKER_USERNAME}  -p${ALI_DOCKER_PASSWORD}
+docker pull rancherlabs/website:build
+docker tag rancherlabs/website:build registry.cn-shanghai.aliyuncs.com/rancher_cn/website:build
+docker push registry.cn-shanghai.aliyuncs.com/rancher_cn/website:build
