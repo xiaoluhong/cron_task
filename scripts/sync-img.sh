@@ -5,10 +5,11 @@ workdir=`pwd`
 log_file=${workdir}/sync_images_$(date +"%Y-%m-%d").log
 images_list="kubernetes-dashboard,k8s-dns-sidecar,k8s-dns-kube-dns,k8s-dns-dnsmasq-nanny,heapster-grafana,heapster-influxdb,heapster,pause,tiller"
 images_arch=amd64
-images_namespace=hongxiaolu
+images_namespace=rancher
+aliyun_registry=registry.cn-shanghai.aliyuncs.com
 
-#docker login --username=${ALI_DOCKER_USERNAME}  -p${ALI_DOCKER_PASSWORD}
-docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
+#docker login --username=${ALI_DOCKER_USERNAME}  -p${ALI_DOCKER_PASSWORD} ${aliyun_registry}
+docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD} 
 
 #Input params: messages
 #Output params: None
@@ -78,14 +79,14 @@ docker_push ()
     rancher_namespace=$3
 
     docker pull gcr.io/${gcr_namespace}/${img_tag}
-    docker tag gcr.io/${gcr_namespace}/${img_tag} ${rancher_namespace}/${img_tag}
-    docker push ${rancher_namespace}/${img_tag}
+    docker tag gcr.io/${gcr_namespace}/${img_tag} ${aliyun_registry}/${rancher_namespace}/${img_tag}
+    docker push ${aliyun_registry}/${rancher_namespace}/${img_tag}
 
     if [ $? -ne 0 ]; then
-        logger "synchronized the ${rancher_namespace}/${img_tag} failed."
+        logger "synchronized the ${aliyun_registry}/${rancher_namespace}/${img_tag} failed."
         exit -1
     else
-        logger "synchronized the ${rancher_namespace}/${img_tag} successfully."
+        logger "synchronized the ${aliyun_registry}/${rancher_namespace}/${img_tag} successfully."
         return 0
     fi
 }
@@ -155,7 +156,8 @@ sync_images_with_arch ()
 #docker_login_check
 sync_images_with_arch ${images_list} ${images_arch} ${images_namespace}
 
-docker login --username=${ALI_DOCKER_USERNAME}  -p${ALI_DOCKER_PASSWORD} registry.cn-shanghai.aliyuncs.com
+docker login --username=${ALI_DOCKER_USERNAME}  -p${ALI_DOCKER_PASSWORD} ${aliyun_registry}
+
 docker pull rancherlabs/website:build
-docker tag rancherlabs/website:build registry.cn-shanghai.aliyuncs.com/rancher_cn/website:build
-docker push registry.cn-shanghai.aliyuncs.com/rancher_cn/website:build
+docker tag rancherlabs/website:build ${aliyun_registry}/rancher/website:build
+docker push registry.cn-shanghai.aliyuncs.com/rancher/website:build
