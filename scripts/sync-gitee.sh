@@ -30,7 +30,8 @@ cd && rm -rf *
 
 git clone https://github.com/xiaoluhong/k8s-website.git
 cd k8s-website
-touch $(date +%Y-%m-%d)
+touch test
+echo $(date +%Y-%m-%d) > test
 git add .
 git commit -m "update"
 git push -f https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/xiaoluhong/k8s-website.git
