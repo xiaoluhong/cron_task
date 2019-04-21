@@ -13,7 +13,5 @@ before_install:
   - sudo apt-get update
   - sudo pip install shyaml
   - sudo apt-get install jq
-  - chmod +x scripts/sync-img.sh
   - chmod +x scripts/sync-gitee.sh
   - scripts/sync-gitee.sh
-  - scripts/sync-img.sh
