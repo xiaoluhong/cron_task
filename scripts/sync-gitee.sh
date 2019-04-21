@@ -22,17 +22,27 @@ sync_repo_github_gitee_rancher
 
 git clone https://github.com/xiaoluhong/rancher-images-localization.git
 cd rancher-images-localization
+touch update.txt
+echo $(date +%Y-%m-%d) > update.txt
 git add .
 git commit -m "update"
-git push -f https://${GITEE_ACC}:${GITEE_PW}@gitee.com/hongxl/rancher-images-localization.git
-            
+git push -f https://${GITEE_ACC}:${GITEE_PW}@gitee.com/hongxl/rancher-images-localization.git      
 cd && rm -rf *
 
 git clone https://github.com/xiaoluhong/k8s-website.git
 cd k8s-website
-touch test
-echo $(date +%Y-%m-%d) > test
+touch update.txt
+echo $(date +%Y-%m-%d) > update.txt
 git add .
 git commit -m "update"
 git push -f https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/xiaoluhong/k8s-website.git
+cd && rm -rf *
+
+git clone https://github.com/xiaoluhong/ansible.git
+cd ansible
+touch update.txt
+echo $(date +%Y-%m-%d) > update.txt
+git add .
+git commit -m "update"
+git push -f https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/xiaoluhong/ansible.git
 cd && rm -rf *
