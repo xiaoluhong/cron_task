@@ -12,6 +12,6 @@ services:
 before_install:
   - sudo apt-get update
   - sudo pip install shyaml
-  - sudo apt-get install jq
+  - sudo apt-get install jq git
   - chmod +x scripts/sync-gitee.sh
   - scripts/sync-gitee.sh
