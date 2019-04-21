@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 export repo_list="rancher rke ui docs os charts rancher-catalog community-catalog server-chart install-docker rio rke-tools longhorn k3s "
 export github_repo_url=github.com/rancher
