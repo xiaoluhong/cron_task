@@ -46,3 +46,13 @@ git add .
 git commit -m "update"
 git push -f https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/xiaoluhong/ansible.git
 cd && rm -rf *
+
+git clone -b file-download https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/xiaoluhong/website.git
+cd website
+touch update.txt
+echo $(date +%Y-%m-%d) > update.txt
+git add .
+git commit -m "update"
+git push -f https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/xiaoluhong/website.git
+cd && rm -rf *
+
