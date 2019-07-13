@@ -56,3 +56,11 @@ git commit -m "update"
 git push -f https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/xiaoluhong/website.git
 cd && rm -rf *
 
+git clone https://github.com/xiaoluhong/runlike.git
+cd runlike
+touch update.txt
+echo $(date +%Y-%m-%d) > update.txt
+git add .
+git commit -m "update"
+git push -f https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/xiaoluhong/runlike.git
+cd && rm -rf *
