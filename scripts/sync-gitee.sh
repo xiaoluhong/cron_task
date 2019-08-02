@@ -11,6 +11,10 @@ sync_repo_github_gitee_rancher ()
         cd
         git clone https://${github_repo_url}/${repo}.git
         cd ${repo}
+        touch update.txt
+        echo $(date +%Y-%m-%d) > update.txt
+        git add .
+        git commit -m "update"
         git push -f https://${GITEE_ACC}:${GITEE_PW}@${gitee_repo_url}/${repo}.git
         cd && rm -rf ${repo}
 
@@ -67,6 +71,10 @@ cd && rm -rf *
 
 git clone https://github.com/xiaoluhong/server-chart.git
 cd server-chart
+touch update.txt
+echo $(date +%Y-%m-%d) > update.txt
+git add .
+git commit -m "update"
 git push -f https://${GITEE_ACC}:${GITEE_PW}@${gitee_repo_url}/server-chart.git
 cd && rm -rf *
 
