@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export repo_list="rancher rke ui docs os charts rancher-catalog community-catalog server-chart install-docker rio rke-tools longhorn k3s k3os submariner"
+export repo_list="rancher rke ui docs os charts rancher-catalog community-catalog install-docker rio rke-tools longhorn k3s k3os submariner"
 export github_repo_url=github.com/rancher
 export gitee_repo_url=gitee.com/rancher
 
@@ -64,3 +64,9 @@ git add .
 git commit -m "update"
 git push -f https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/xiaoluhong/runlike.git
 cd && rm -rf *
+
+git clone https://github.com/xiaoluhong/server-chart.git
+cd server-chart
+git push -f https://${GITEE_ACC}:${GITEE_PW}@${gitee_repo_url}/server-chart.git
+cd && rm -rf *
+
