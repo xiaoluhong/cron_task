@@ -51,22 +51,22 @@ git commit -m "update"
 git push -f https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/xiaoluhong/ansible.git
 cd && rm -rf *
 
-git clone -b file-download https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/xiaoluhong/website.git
+git clone -b file-download https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/cnrancher/website.git
 cd website
 touch update.txt
 echo $(date +%Y-%m-%d) > update.txt
 git add .
 git commit -m "update"
-git push -f https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/xiaoluhong/website.git
+git push -f https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/cnrancher/website.git
 cd && rm -rf *
 
-git clone https://github.com/xiaoluhong/runlike.git
+git clone https://github.com/cnrancher/runlike.git
 cd runlike
 touch update.txt
 echo $(date +%Y-%m-%d) > update.txt
 git add .
 git commit -m "update"
-git push -f https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/xiaoluhong/runlike.git
+git push -f https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/cnrancher/runlike.git
 cd && rm -rf *
 
 git clone https://github.com/xiaoluhong/server-chart.git
