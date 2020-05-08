@@ -10,7 +10,7 @@ aliyun_registry=registry.cn-shanghai.aliyuncs.com
 
 docker login --username=${ALI_DOCKER_USERNAME}  -p${ALI_DOCKER_PASSWORD} ${aliyun_registry}
 
-docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD} 
+docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
 
 #Input params: messages
 #Output params: None
