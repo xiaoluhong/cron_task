@@ -1,6 +1,5 @@
 language: shell
 dist: xenial
-sudo: required
 before_script:
   # Set up git user name and tag this commit
   - git config --global user.name "xiaoluhong"
