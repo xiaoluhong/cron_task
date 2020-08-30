@@ -54,25 +54,25 @@ git commit -m "update $(date +%Y-%m-%d:%H:%M:%S)"
 git push -f https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/xiaoluhong/ansible.git
 cd /tmp && rm -rf *
 
-# website file-download
-git clone -b file-download https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/cnrancher/website.git
-cd website
-touch update.txt
-echo $(date +%Y-%m-%d:%H:%M:%S) > update.txt
-git add .
-git commit -m "update $(date +%Y-%m-%d:%H:%M:%S)"
-git push -f https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/cnrancher/website.git
-cd /tmp && rm -rf *
-
-# rancher docs2
-git clone -b v1.4.x-rancher https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/cnrancher/docs2.git
-cd docs2
-touch update.txt
-echo $(date +%Y-%m-%d:%H:%M:%S) > update.txt
-git add .
-git commit -m "update $(date +%Y-%m-%d:%H:%M:%S)"
-git push -f https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/cnrancher/docs2.git
-cd /tmp && rm -rf *
+# # website file-download
+# git clone -b file-download https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/cnrancher/website.git
+# cd website
+# touch update.txt
+# echo $(date +%Y-%m-%d:%H:%M:%S) > update.txt
+# git add .
+# git commit -m "update $(date +%Y-%m-%d:%H:%M:%S)"
+# git push -f https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/cnrancher/website.git
+# cd /tmp && rm -rf *
+# 
+# # rancher docs2
+# git clone -b v1.4.x-rancher https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/cnrancher/docs2.git
+# cd docs2
+# touch update.txt
+# echo $(date +%Y-%m-%d:%H:%M:%S) > update.txt
+# git add .
+# git commit -m "update $(date +%Y-%m-%d:%H:%M:%S)"
+# git push -f https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/cnrancher/docs2.git
+# cd /tmp && rm -rf *
 
 # runlike
 git clone https://github.com/cnrancher/runlike.git
